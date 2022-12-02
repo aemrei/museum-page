@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-const menuItems = [];
+import clsx from "clsx";
 
 interface MenuProps {
   items: MenuItem[];
@@ -8,7 +7,7 @@ interface MenuProps {
 }
 export const Menu = ({ items, className }: MenuProps) => {
   return (
-    <ul className={`flex flex-col items-end ${className}`}>
+    <ul className={clsx("flex flex-col items-end", className)}>
       {items.map((item) => (
         <li key={item.label}>
           <Link
